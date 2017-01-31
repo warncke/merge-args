@@ -1,0 +1,22 @@
+{
+  "author": "Ersun Warncke <ersun.warncke@gmail.com>",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "description": "Merge args over defaults with type checking",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT",
+  "main": "lib/merge-args.js",
+  "name": "merge-args",
+  "repository": "warncke/merge-args",
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "0.1.0"
+}
