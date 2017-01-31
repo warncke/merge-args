@@ -81,7 +81,7 @@ describe('merge-args', function () {
         })
         // should throw error
         assert.throws(function () {
-            mergeArgs({}, null)
+            mergeArgs({foo: true}, null)
         })
     })
 
@@ -90,7 +90,7 @@ describe('merge-args', function () {
         var mergeArgs = MergeArgs()
         // should throw error
         assert.throws(function () {
-            mergeArgs({}, {test: true})
+            mergeArgs({foo: true}, {test: true})
         })
     })
 
@@ -101,6 +101,17 @@ describe('merge-args', function () {
         assert.throws(function () {
             mergeArgs({test: ''}, {test: true})
         })
+    })
+
+    it('should not throw error when target has no properties', function () {
+        // create new merger with default options
+        var mergeArgs = MergeArgs()
+        // create empty target
+        var config = {}
+        // merging args to an empty argument should not throw error
+        mergeArgs(config, {foo: 'bar'})
+        // test result
+        assert.deepEqual(config, {foo: 'bar'})
     })
 
 })
